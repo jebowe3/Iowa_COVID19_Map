@@ -200,7 +200,7 @@ function drawMap(err, corona) {
       grades = [ss.min(caseStops[0]), ss.min(caseStops[1]), ss.min(caseStops[2]), ss.min(caseStops[3]), ss.min(caseStops[4])],
       labels = ["<h6 style='font-size:14px; font-weight:bold'>Confirmed Cases</h6>"];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+    // loop through our intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
       div.innerHTML +=
         labels.push('<i style="background:' + getCaseColor(grades[i]) + '"></i> ' +
@@ -217,7 +217,7 @@ function drawMap(err, corona) {
       grades = [ss.min(deathStops[0]), ss.min(deathStops[1]), ss.min(deathStops[2]), ss.min(deathStops[3]), ss.min(deathStops[4])],
       labels = ["<h6 style='font-size:14px; font-weight:bold'>Confirmed Deaths</h6>"];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+    // loop through our intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
       div.innerHTML +=
         labels.push('<i style="background:' + getDeathColor(grades[i]) + '"></i> ' +
@@ -242,7 +242,7 @@ function drawMap(err, corona) {
     }
   });
 
-  //fit the map to the extent of the county layer upon drawing
+  //fit the map to the extent of the cases layer upon drawing
   map.fitBounds(cases.getBounds());
 
 }; //end drawMap function
